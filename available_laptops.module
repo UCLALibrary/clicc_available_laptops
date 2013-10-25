@@ -32,10 +32,7 @@ function available_laptops_block_view($delta = ''){
  function available_laptops_block_contents($delta){
 	switch ($delta){
 		case 'available_laptops':{
-				/*module_load_include('clicc-laptop-availability2.php');
-				$loc_and_lap = get_laptops();
-				/*$location = '';*/
-				// Check if production server
+								// Check if production server
 			    if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "www.clicc.ucla.edu") {
 			        $jsonurl = "http://webservices.library.ucla.edu/laptops/available";
 			    }
