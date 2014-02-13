@@ -6,7 +6,7 @@
 function available_laptops_block_info(){
 	$blocks['available_laptops'] = array(
 		'info' => t('Available Laptops'),
-		'cache' => DRUPAL_CACHE_PER_ROLE,
+		'cache' => DRUPAL_NO_CACHE,
 		);
 	return $blocks;
 }
@@ -30,6 +30,7 @@ function available_laptops_block_view($delta = ''){
  * Implements hook_block_contents().
  */
  function available_laptops_block_contents($delta){
+	$GLOBALS['conf']['cache'] = false; // Prevent caching
 	switch ($delta){
 		case 'available_laptops':{
 								// Check if production server
